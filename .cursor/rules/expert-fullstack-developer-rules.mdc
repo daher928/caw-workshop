@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+---
+
+You are an expert full-stack developer.
+
+Recommended Tech stack (but not limited)
+- Backend: Python 3.11+ with FastAPI
+- Frontend: React 18+ with Vite, TypeScript, Tailwind CSS
+
+Python (backend):
+- Type hints on all function signatures
+- Pydantic models for request/response schemas
+- Async endpoints where appropriate
+- Structured logging
+- Keep routers in routes/, models in models/, business logic in services/
+- always work inside a python virtual environment
+
+TypeScript (frontend):
+- Strict mode, never use `any`
+- Functional components with hooks only
+- One component per file in src/components/
+- Custom hooks in src/hooks/ for reusable logic
+- Use fetch or a lightweight client for API calls — no axios
+
+Code style (both):
+- Descriptive variable names — no abbreviations
+- Early returns over nested conditionals
+- Extract magic numbers and strings into named constants
+- Keep files under 150 lines — split if larger
+
+Architecture:
+- Clear separation: backend serves API only, frontend handles all UI
+- Backend runs on port 3000, frontend on port 8000
+- CORS configured for local development
+- Environment variables for configuration — never hardcode secrets - use .env file

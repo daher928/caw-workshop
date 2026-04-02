@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+# Use GitHub MCP for All Remote Repository Operations
+
+When interacting with a remote Git repository, **always** use the GitHub MCP server tools instead of shell-based `git` commands for remote operations.
+
+## What counts as a remote operation
+- Push, pull, fetch, clone
+- Branch creation/deletion on remote
+- Creating, listing, reviewing, and merging pull requests
+- Creating, updating, and commenting on issues
+- Managing releases and tags
+- Viewing repository metadata, commits, and file contents on remote
+- Forking and starring repositories
+- Managing GitHub Actions / checks
+
+## What stays as local shell commands
+- Local-only git operations are fine via shell: `git status`, `git add`, `git commit`, `git log`, `git diff`, `git stash`, `git rebase`, `git checkout`, `git branch` (local), `git merge` (local).
+
+## How to apply
+1. Check available GitHub MCP tools first.
+2. Use the appropriate MCP tool for the remote operation (e.g., `create_pull_request`, `push_files`, `list_branches`, `create_issue`).
+3. If a specific MCP tool is not available for an operation, fall back to the `gh` CLI as a second choice, and raw `git` shell commands only as a last resort.
+4. When falling back, mention to the user that the GitHub MCP did not cover that operation.
